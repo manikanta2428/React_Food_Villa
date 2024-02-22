@@ -1,0 +1,32 @@
+.logo{
+    width: 100px;
+}
+.headerComponent{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.nav-items > ul {
+    display: flex;
+    list-style-type: none;
+    
+}
+.nav-items > ul >li {
+    padding: 10px;
+}
+
+.card {
+    width: 280px;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+}
+.foodImage{
+    width: 100%;
+}
+.AllCards{
+    display: flex;
+    flex-wrap: wrap;
+}

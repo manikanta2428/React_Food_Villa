@@ -1,0 +1,34 @@
+{
+  "name": "React_Food_villa",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "Manikanta",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.23.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 10 Chrome versions"
+  ],
+  "description": "Its a clone of Food Delivery Application",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manikanta2428/React_Food_villa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manikanta2428/React_Food_villa/issues"
+  },
+  "homepage": "https://github.com/manikanta2428/React_Food_villa#readme"
+}
