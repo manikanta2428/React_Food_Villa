@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+
+
 const Title = () => {
     return(
             <a href="/">
@@ -13,6 +17,7 @@ const Title = () => {
 
 
 const Header = () => {
+        const [loginState,setLoginState] = useState(true);
     return (
             <div className = "headerComponent">
                     <Title />
@@ -22,7 +27,10 @@ const Header = () => {
                             <li>About</li>
                             <li>Contact</li>
                             <li>Cart</li>
+                            {loginState ? <button onClick={() => setLoginState(false)}>Login</button>
+                    : <button onClick={() => setLoginState(true)}>Logout</button>}
                     </ul>
+                    
                     </div>
                     
             </div>
