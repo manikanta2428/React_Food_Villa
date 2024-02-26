@@ -1,14 +1,12 @@
-import React from 'react'
-import { Image, Shimmer } from 'react-shimmer'
+
 
 const ShimmerLoading = () => {
   return (
-    <div>
-      <Image
-        src='https://source.unsplash.com/random/800x600'
-        fallback={<Shimmer width={800} height={600} />}
-      />
+    <div className="AllCards">
+    {Array(10).fill("").map((e,index) => <div key={index} className='shimmer'></div>)}
+
     </div>
+    
   )
 }
 export default ShimmerLoading;

@@ -1,11 +1,12 @@
 import { useState } from "react";
-
+import logo from "../assets/img/mani.png";
+import { Link } from "react-router-dom";
 
 
 const Title = () => {
     return(
             <a href="/">
-                    <img alt = "logo" className = "logo" src= "https://marketplace.canva.com/EAFXIvlL2Ns/2/0/1600w/canva-brown-and-black-vintage-food-restaurant-logo-YASJJho2Kzw.jpg" />
+                    <img alt = "logo" className = "logo" src= {logo} />
 
             </a>
     );
@@ -23,15 +24,22 @@ const Header = () => {
                     <Title />
                     <div className="nav-items">
                     <ul>
+                        <Link to="/">
                             <li>Home</li>
-                            <li>About</li>
+                        </Link>
+                        <Link to="/about">
+                                <li>About</li>
+                        </Link>
+                        <Link to="/contact">
                             <li>Contact</li>
+                        </Link>
                             <li>Cart</li>
-                            {loginState ? <button onClick={() => setLoginState(false)}>Login</button>
-                    : <button onClick={() => setLoginState(true)}>Logout</button>}
                     </ul>
                     
                     </div>
+                    
+                    {loginState ? <button onClick={() => setLoginState(false)}>Login</button>
+                    : <button onClick={() => setLoginState(true)}>Logout</button>}
                     
             </div>
     );

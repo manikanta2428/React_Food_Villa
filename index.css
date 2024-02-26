@@ -11,6 +11,8 @@
 .nav-items > ul {
     display: flex;
     list-style-type: none;
+    justify-content: space-between;
+    padding: 0px;
     
 }
 .nav-items > ul >li {
@@ -33,4 +35,18 @@
 .search-container{
     padding: 10px;
     
+}
+.shimmer {
+    width: 200px;
+    height: 200px;
+    background: grey;
+    margin: 20px;
+}
+
+.oopsLogo{
+    width: 100%;
+}
+.restaurent-details{
+    display: flex;
+    padding: 10px;
 }
