@@ -3,6 +3,8 @@ import { restrautList } from "../Constants";
 import { useState,useEffect } from "react";
 import ShimmerLoading from "./ShimmerLoading";
 import { Link } from "react-router-dom";
+import { getFilterData } from "../utils/mixins";
+import useOnline from "../utils/useOnline";
 
 const Body = () =>{
         const [searchText,setSearchText] = useState();
@@ -21,11 +23,10 @@ const Body = () =>{
                setAllRestaurents(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         }
 
-        const getFilterData = (searchText,restaurents) => {
-                const filteredData = restaurents.filter(x => x?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-                return filteredData;
-
-        }
+       const online = useOnline();
+       if(!online){
+                return <h1>You are Offline..!</h1>
+       }
         
     return allRestaurents.length == 0 ? <ShimmerLoading /> :  (
            <>
