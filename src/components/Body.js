@@ -30,7 +30,7 @@ const Body = () =>{
         
     return allRestaurents.length == 0 ? <ShimmerLoading /> :  (
            <>
-           <div className="search-container">
+           <div className="search-container p-5 bg-violet-50 my-5">
                 <input type="text" 
                 className="input" 
                 placeholder="Search Here" 
@@ -39,7 +39,7 @@ const Body = () =>{
                         setSearchText(e.target.value);
                 }}
                 />
-                <button className="serach-button" onClick={()=> {
+                <button className="serach-button p-2 m-2 bg-red-900 text-white rounded-2xl" onClick={()=> {
                         const filterData = getFilterData(searchText,allRestaurents);
                         setFilteredRestaurents(filterData);
 
@@ -47,7 +47,7 @@ const Body = () =>{
                         
                         }>Search </button>
            </div>
-            <div className="AllCards">
+            <div className="flex flex-wrap">
                     {filteredRestaurents.length == 0 ? <h1>No Restaurents Available</h1>:filteredRestaurents.map((restaurent) =>{
                             return (
                                 <Link 
