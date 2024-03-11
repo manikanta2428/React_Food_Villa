@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 import Body from "./components/Body";
 import About from "./components/About";
 import Oops from "./components/Oops";
-import Contact from "./components/Contact";
 import RestaurentDetails from "./components/RestaurentDetails";
 import Profile from "./components/Profile";
+import Cart from "./components/Cart";
 
 
 const AppLayout = () => {
@@ -23,7 +23,7 @@ const AppLayout = () => {
         );
 }
 
-const Cart = lazy(() => import("./components/Cart"));
+const Contact = lazy(() => import("./components/Contact"));
 const appRouter = createBrowserRouter([
         {
                 path : "/",
@@ -45,7 +45,7 @@ const appRouter = createBrowserRouter([
                         },
                         {
                                 path : "/contact",
-                                element : <Contact />
+                                element : <Suspense fallback={<h1>Loading.....!</h1>}><Contact /></Suspense>
 
                         },
                         {
@@ -54,7 +54,8 @@ const appRouter = createBrowserRouter([
                         },
                         {
                                 path : "cart",
-                                element : <Suspense fallback={<h1>Loading.....!</h1>}><Cart /></Suspense>
+                                element : <Cart />
+
                         }
                 ]
         }
