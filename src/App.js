@@ -1,4 +1,4 @@
-import React,{lazy,Suspense} from "react";
+import React,{lazy,Suspense,useContext, useState} from "react";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 
 
@@ -11,14 +11,24 @@ import Oops from "./components/Oops";
 import RestaurentDetails from "./components/RestaurentDetails";
 import Profile from "./components/Profile";
 import Cart from "./components/Cart";
+import UserContext from "./utils/userContext";
 
 
 const AppLayout = () => {
+        const [user,setUser] = useState({
+                name : "manikanta"
+        })
+
         return(
-                <>
+                <>      
+                        <UserContext.Provider value = {{user: user,
+                        setUser : setUser}}>
                         <Header />
                         <Outlet />
                         <Footer />
+                        </UserContext.Provider>
+                        
+                        
                 </>
         );
 }

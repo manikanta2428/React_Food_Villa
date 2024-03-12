@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import logo from "../assets/img/mani.png";
 import { Link } from "react-router-dom";
 
+import UserContext from "../utils/userContext";
 
 const Title = () => {
     return(
@@ -18,7 +19,10 @@ const Title = () => {
 
 
 const Header = () => {
+    const{ user }  = useContext(UserContext);
+
         const [loginState,setLoginState] = useState(true);
+        console.log(user);
     return (
             <div className = "flex justify-between bg-violet-50 shadow-lg">
                     <Title />
@@ -39,7 +43,7 @@ const Header = () => {
                     </ul>
                     
                     </div>
-                    
+                    <span className="p-10 text-yellow-800">{user.name}</span>
                     {loginState ? <button onClick={() => setLoginState(false)}>Login</button>
                     : <button onClick={() => setLoginState(true)}>Logout</button>}
                     
